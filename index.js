@@ -9,9 +9,14 @@ app.get('/', function(req, res) {
 });
 
 app.get('/get-quote', function(req, res) {
-  fs.readFile('quotes.json', (err,data) => {
-    if (err) throw err;
-    console.log(data)
+  let dataJSON;
+  fs.readFile('quotes.json','utf8', function(err,data) { 
+    if (err) throw err; 
+    dataJSON = JSON.parse(data)
+    console.log(dataJSON.length)
+    //res.status(200).send(Math.floor(Math.random() * (dataJSON.length - 1)) + 0);
+    //res.sendStatus(200)
+    res.json(dataJSON[Math.floor(Math.random() * (dataJSON.length - 1))])
   })
 })
 
