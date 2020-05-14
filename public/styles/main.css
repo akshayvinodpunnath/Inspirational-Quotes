@@ -7,8 +7,32 @@ body {
 }
 
 #title {
-    font-size: xxx-large;
+    font-size: 3rem;
     font-family: 'Kaushan Script', cursive;
     text-align: center;
+    text-decoration: underline;
 }
 
+#Generate-Quote {
+    font-family: 'Acme', sans-serif;
+    background-color: white;
+    color: black;
+    border: none; 
+    font-size: large;
+    text-align: center;
+    margin:auto;
+    display:block;
+    font-size: 1rem;
+}
+
+#Generate-Quote:hover {
+    background-color: #b7a599; /* Green */
+    border: none; 
+  }
+
+  #Place-Text {
+    text-align: center;
+    margin: 50px;
+    font-family: 'Acme', sans-serif;
+    font-size: 1.5rem;
+  }
