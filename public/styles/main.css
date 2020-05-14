@@ -1,3 +1,14 @@
 body {
-    background-image: url("background.jpg")
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    height: 100%;
 }
+
+#title {
+    font-size: xxx-large;
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+}
+
