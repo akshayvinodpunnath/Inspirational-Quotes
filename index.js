@@ -15,14 +15,17 @@ app.get('/', function(req, res) {
 //service to retrieve quote
 app.get('/get-quote', function(req, res) {
   let dataJSON;
+  /*
+    - Read file contents from quotes.json
+    - Store the retured data into dataJSON variable
+    - return random element from dataJSON array using dataJSON.length as max position
+  */
   fs.readFile('quotes.json','utf8', function(err,data) { 
     if (err) throw err; 
-    dataJSON = JSON.parse(data)
-    console.log(dataJSON.length)
-    //res.status(200).send(Math.floor(Math.random() * (dataJSON.length - 1)) + 0);
-    //res.sendStatus(200)
+    const dataJSON = JSON.parse(data)
     res.json(dataJSON[Math.floor(Math.random() * (dataJSON.length - 1))])
   })
 })
 
+//Start app at 8000
 app.listen(8080);
