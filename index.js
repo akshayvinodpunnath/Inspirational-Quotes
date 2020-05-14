@@ -3,11 +3,16 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 
-// viewed at http://localhost:8080
+
+//serve static files, files under public folder.
+app.use(express.static(__dirname + '/public'));
+
+//Landing Page, redirects to index.html
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+//service to retrieve quote
 app.get('/get-quote', function(req, res) {
   let dataJSON;
   fs.readFile('quotes.json','utf8', function(err,data) { 
